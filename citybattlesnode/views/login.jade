@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  #image
+  h3 May the best city win
+  #border
+   form(method="post", action="/login")
+     input(type="text", placeholder="Username", autofocus="true", name="username")
+     br
+     input(type="password", placeholder="Password", name="password")
+     br
+     input(type="submit", value="login")

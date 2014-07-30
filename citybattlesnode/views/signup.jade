@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  #image
+  h3 May the best city win
+  #border
+   form(method="post", action="/signup")
+     input(type="text", placeholder="Username", autofocus="true", name="username")
+     br
+     input(type="text", placeholder="Email", autofocus="true", name="email")
+     br
+     input(type="password", placeholder="Password", name="password")
+     br
+     input(type="submit", value="login")

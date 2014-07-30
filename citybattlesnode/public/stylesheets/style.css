@@ -3,27 +3,17 @@
 body {
   text-align: center;
   padding: 50px;
-<<<<<<< HEAD
-<<<<<<< HEAD
   font: 30px "Open Sans", normal;
   color: white;
   background-image:url('/images/city.jpg');
-=======
-  font: 14px "Open Sans", Helvetica, Arial, sans-serif;
-  background-color: #f1c40f;
->>>>>>> FETCH_HEAD
-=======
-  font: 14px "Open Sans", Helvetica, Arial, sans-serif;
-  background-color: #f1c40f;
->>>>>>> FETCH_HEAD
+  background-size: 100%;
+  background-repeat:no-repeat;
 }
 
 a {
   color: #00B7FF;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 :-moz-placeholder {
 	color: white;
 }
@@ -64,40 +54,12 @@ input[type="text"] {
   	background:rgba(255,255,255,0.5);
   }
 
+  #image {
+   width: 100%;
+   height: 200px;
+   content: url("/images/citybattleslogo.png");
+}​
+
 /*.username {
 	 font: 14px "Open Sans", normal;
 }*/
-=======
-=======
->>>>>>> FETCH_HEAD
-h1 {
-	font-size: 60px;
-}
-
-h2 {
-	font-size: 30px;
-}
-
-h3 {
-	font-size: 20px;
-}
-
-.nav{
-    border:1px solid #ccc;
-    border-width:1px 0;
-    list-style:none;
-    margin:0;
-    padding:0;
-    text-align:center;
-}
-
-.nav a{
-    display:inline-block;
-    padding:10px;
-    color: #008080;
-<<<<<<< HEAD
-}
->>>>>>> FETCH_HEAD
-=======
-}
->>>>>>> FETCH_HEAD
