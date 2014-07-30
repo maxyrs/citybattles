@@ -1,0 +1,103 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body {
+  text-align: center;
+  padding: 50px;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  font: 30px "Open Sans", normal;
+  color: white;
+  background-image:url('/images/city.jpg');
+=======
+  font: 14px "Open Sans", Helvetica, Arial, sans-serif;
+  background-color: #f1c40f;
+>>>>>>> FETCH_HEAD
+=======
+  font: 14px "Open Sans", Helvetica, Arial, sans-serif;
+  background-color: #f1c40f;
+>>>>>>> FETCH_HEAD
+}
+
+a {
+  color: #00B7FF;
+}
+
+<<<<<<< HEAD
+<<<<<<< HEAD
+:-moz-placeholder {
+	color: white;
+}
+ 
+::-webkit-input-placeholder {
+    color: white;
+}
+
+*:focus {outline: none;}
+
+input[type="submit"] {
+	color: white;
+    border: none;
+    background: transparent;
+    font: 25px "Open Sans", normal;
+    color: white;
+  }
+
+input[type="password"] {
+    border: none;
+    background: transparent;
+    font: 25px "Open Sans", normal;
+    color: white;
+  }
+
+input[type="text"] {
+    border: none;
+    background: transparent;
+    font: 25px "Open Sans", normal;
+    color: white;
+  }
+
+  #border {
+  	margin : 0 auto;
+    overflow: hidden; 
+    text-align: center;
+  	padding: 1em;
+  	background:rgba(255,255,255,0.5);
+  }
+
+/*.username {
+	 font: 14px "Open Sans", normal;
+}*/
+=======
+=======
+>>>>>>> FETCH_HEAD
+h1 {
+	font-size: 60px;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+h3 {
+	font-size: 20px;
+}
+
+.nav{
+    border:1px solid #ccc;
+    border-width:1px 0;
+    list-style:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+
+.nav a{
+    display:inline-block;
+    padding:10px;
+    color: #008080;
+<<<<<<< HEAD
+}
+>>>>>>> FETCH_HEAD
+=======
+}
+>>>>>>> FETCH_HEAD

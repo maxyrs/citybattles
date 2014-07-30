@@ -1,0 +1,23 @@
+extends layout
+
+block content
+<<<<<<< HEAD
+<<<<<<< HEAD
+  h1= title
+  h3 Welcome to #{title}, #{name}!
+=======
+=======
+>>>>>>> FETCH_HEAD
+  img(src="https://github-render.s3.amazonaws.com/prod/36043cbec9188dbb5c56b9b2d3173a1f.png")
+  
+  ul.nav
+    a(href="") Sign In
+    a(href="") Log In
+  
+  h3 Welcome to #{title}, #{name}
+>>>>>>> FETCH_HEAD
+  p #{question}
+  form(method="post", action="/battle" autocomplete="off")
+   input(type="text", placeholder="Answer", name="answer")
+   br
+   input(type="submit", value="Submit")
