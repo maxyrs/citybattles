@@ -5,7 +5,6 @@ var Parse = require('parse').Parse;
 Parse.initialize("unitX88tQcs0FUtOy1ridPOKzNiGYlcvFDtCduHP", "HF0sGCMBC2KqzagEvw5dHfEVCt17CrHg9YbzQfll");
 /* GET home page. */
 router.get('/', function(req, res){
-
   var Questions = Parse.Object.extend("Questions");
 	var query = new Parse.Query(Questions);
 
@@ -23,14 +22,14 @@ router.get('/', function(req, res){
    	   			error: function(error){
        			 // Error retrieving object D: halp
    	   		},
-    			   success: function(objects) {
-    	   	    	console.log("Successfully retrieved " + objects.length + " questions.");
+    			 success: function(objects) {
+    	   	     console.log("Successfully retrieved " + objects.length + " questions.");
     			 	//Parse.object values returned
    			   		for (var i = 0; i < objects.length; i++) { 
      	 				var object = objects[i];
-    	  				var questions = object.get('Question');
+    	  				questions = object.get('Question');
     	  				console.log(questions);
-    	  				var answers = object.get('Answer');
+    	  				answers = object.get('Answer');
                 console.log(answers);
    			 		}
 
@@ -38,6 +37,7 @@ router.get('/', function(req, res){
  							Parse.User.current().fetch().then(function (user) {
     						var username = user.username;
     						res.render('battle', { title: "CityBattles", user: username, question: questions, answer: answers });
+                GLOBAL.question = questions;
     				    });
 					   }
    				}

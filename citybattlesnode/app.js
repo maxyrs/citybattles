@@ -13,6 +13,8 @@ var users = require('./routes/users');
 var signup = require('./routes/signup');
 var login = require('./routes/login');
 var battle = require('./routes/battle');
+var geolocation = require('./routes/geolocation');
+var league = require('./routes/league');
 
 
 var app = express();
@@ -20,6 +22,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
+
 
 app.use(favicon());
 app.use(logger('dev'));
@@ -32,6 +35,8 @@ app.use('/users', users);
 app.use('/signup', signup);
 app.use('/login', login);
 app.use('/battle', battle);
+app.use('/geolocation', geolocation);
+app.use('/league', league);
 
 app.get('/signup', function(req, res){
     res.render('signup');
@@ -53,7 +58,12 @@ app.post('/signup', function(req, res){
     });
 });
 
-app.get('/login', function(req, res){
+app.post('/geolocation', function(req, res){
+    console.log(JSON.stringify(req.body.city));
+});
+
+
+app.get('/login', function(req, res) {
     res.render('login');
 });
 
@@ -80,38 +90,49 @@ app.get('/battle', function(req, res) {
 });
 
 app.post('/battle', function(req, res) {
-    console.log(req.body.answer);
     var Questions = Parse.Object.extend("Questions");
     var query = new Parse.Query(Questions);
-    query.equalTo("Questions", req.body.question);
+    // question = exports.question;
+    // console.log(exports.question);
+    console.log(question);
+    query.equalTo("Question", question);
     query.equalTo("Answer", req.body.answer);
+    console.log(req.body.answer);
     query.find({
         success: function(results) {
-         var city = Parse.User.current().get("city");
-         console.log(city);
-         var Cities = Parse.Object.extend("Cities");
-         var query = new Parse.Query(Cities);
-         query.equalTo("City", city);
-         query.find({
-            success: function(results) {
-                 console.log("Successfully retrieved " + results.length + " score.");
-                 for (var i = 0; i < results.length; i++) {
-                     var object = results[i];
-                     results[i].increment("Score");
-                     results[i].save();
 
-                     }
+            // res.render(results);
+            // var answer = results[0].get("Answer");
+            // console.log(answer);
+             if (results.length === 0) {
+                console.log("poo. the answer is wrong. comic sans is great.")
+            }
+             else {   
+              console.log(results);
+              var city = Parse.User.current().get("city");
+                 console.log(city);
+                 var Cities = Parse.Object.extend("Cities");
+                 var query = new Parse.Query(Cities);
+                 query.equalTo("City", city);
+                query.find({
+                    success: function(results) {
+                         console.log("Successfully retrieved " + results.length + " score.");
+                         for (var i = 0; i < results.length; i++) {
+                             var object = results[i];
+                             results[i].increment("Score");
+                             results[i].save();
+                         }
              },
              error: function(error) {
                 console.log("Error: " + error.code + " " + error.message);
+                res.redirect('/battle');
              }
          }); 
-         // cityScore.increment("score");
-         // cityScore.save();
+         }
          res.redirect('/battle');
         },
          error: function(error) {
-             console.log("Error: " + error.code + " " + error.message);
+             console.log("Ah! No! That didn't work! :c");
              res.redirect('/battle');
          }
     });
