@@ -76,12 +76,6 @@ input[type="text"] {
   content: url("/images/citybattlessilhouette.svg")
  }
 
- #londonBottomImage {
-  position: absolute;
-  border: 0px;
-  content: url("/images/citybattlessilhouette.svg");
- }
-
 /*.username {
 	 font: 14px "Open Sans", normal;
 }*/
