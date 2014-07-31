@@ -69,6 +69,19 @@ input[type="text"] {
     width: 100%;
  }
 
+ #londonBottom {
+  position: relative;
+  width: 100%;
+  height: auto;
+  content: url("/images/citybattlessilhouette.svg")
+ }
+
+ #londonBottomImage {
+  position: absolute;
+  border: 0px;
+  content: url("/images/citybattlessilhouette.svg");
+ }
+
 /*.username {
 	 font: 14px "Open Sans", normal;
 }*/
