@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  #citysilhouette
+  #image
+  h2 Hello there, start answering!
+  p #{question}
+  #border
+   form(method="post", action="/battle")
+    input(type="text", placeholder="Answer", name="answer")
+    br
+    input(type="submit", value="Submit")
